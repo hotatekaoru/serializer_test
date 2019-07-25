@@ -6,7 +6,9 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 
+gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'fast_jsonapi'
 gem 'haml-rails'
 gem 'kaminari'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
