@@ -11,9 +11,13 @@ class Fj::ShopSerializer < Fj::ApplicationSerializer
     end
 
     attributes :day_of_week_code, :opened
-    has_many :business_hours, serializer: BusinessHourSerializer
+    attribute :business_hours do |record|
+      BusinessHourSerializer.new(record.business_hours).serializable_hash
+    end
   end
 
   attribute :name
-  has_many :business_days, serializer: BusinessDaySerializer
+  attribute :business_days do |record|
+    BusinessDaySerializer.new(record.business_days).serializable_hash
+  end
 end
